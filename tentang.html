@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami — Nirankara Bali</title>
+  <meta name="description" content="Tentang Nirankara Bali: spesialis Platycerium & Anthurium, transparan, fleksibel, terpercaya.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Nirankara Bali">
+        <img src="Foto/Logo.png" class="logo" alt="Logo Nirankara Bali">
+        <span>Nirankara Bali</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="tentang.html" class="active">Tentang</a>
+        <a href="koleksi.html">Koleksi</a>
+        <a href="belanja.html">Cara Belanja</a>
+        <a href="lokasi.html">Lokasi</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>Tentang Nirankara Bali</h2>
+        <p class="lead">Nirankara Bali adalah sebuah bisnis yang bergerak di bidang tanaman hias premium, khususnya jenis Platycerium. Sistem penjualan kami berfokus pada live sale yang dilakukan melalui platform TikTok dan Facebook, sehingga pelanggan dapat secara langsung melihat, memilih, dan melakukan penawaran terhadap tanaman yang tersedia.</p>
+        
+        <p>Untuk memudahkan pelanggan, Nirankara Bali menyediakan tiga lokasi pengambilan tanaman, yaitu: Nirankara Garden, Ubung, dan Pengosekan. Dengan sistem ini, kami berusaha memberikan pengalaman belanja tanaman hias yang transparan, fleksibel, dan terpercaya, sekaligus memastikan setiap koleksi tanaman premium dapat sampai ke tangan pelanggan dalam kondisi terbaik.</p>
+        
+        <div class="owner-section">
+          <div class="owner-info">
+            <div class="owner-photo">
+              <img src="Foto/Owner.jpg" alt="Ida Bagus Indra Bhaskara - Owner Nirankara Bali" class="owner-image" onclick="openPhotoModal(this.src, this.alt)">
+            </div>
+            <div class="owner-details">
+              <h3>Ida Bagus Indra Bhaskara</h3>
+              <p class="owner-title">Owner & Founder</p>
+              <p><strong>Didirikan:</strong> Tahun 2023</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <span class="chip">Spesialisasi</span>
+            <h3>Platycerium</h3>
+            <p>Koleksi tanaman hias premium dengan standar kesehatan tinggi dan karakter terbaik di kelasnya.</p>
+          </div>
+          <div class="card">
+            <span class="chip">Sistem Penjualan</span>
+            <h3>Live Sale TikTok & Facebook</h3>
+            <p>Pelanggan dapat melihat, memilih, dan melakukan penawaran secara langsung melalui live sale.</p>
+          </div>
+          <div class="card">
+            <span class="chip">Lokasi Pengambilan</span>
+            <h3>3 Titik Strategis</h3>
+            <p>Nirankara Garden, Ubung, dan Pengosekan untuk kemudahan akses pelanggan di berbagai area.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>Nirankara Bali © <span id="year"></span>. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Photo Modal -->
+  <div id="photoModal" class="photo-modal" onclick="closePhotoModal()">
+    <div class="photo-modal-content" onclick="event.stopPropagation()">
+      <span class="photo-modal-close" onclick="closePhotoModal()">&times;</span>
+      <img id="modalPhoto" src="" alt="" class="modal-photo-image">
+      <div class="modal-photo-caption" id="modalCaption"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Photo Modal Functions
+    function openPhotoModal(src, alt) {
+      const modal = document.getElementById('photoModal');
+      const modalPhoto = document.getElementById('modalPhoto');
+      const modalCaption = document.getElementById('modalCaption');
+      
+      modalPhoto.src = src;
+      modalPhoto.alt = alt;
+      modalCaption.textContent = alt;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closePhotoModal() {
+      const modal = document.getElementById('photoModal');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closePhotoModal();
+      }
+    });
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak & Customer Service — Nirankara Bali</title>
+  <meta name="description" content="Kontak Nirankara Bali: WhatsApp Admin, TikTok, Facebook, dan form pesan sederhana.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Nirankara Bali">
+        <img src="Foto/Logo.png" class="logo" alt="Logo Nirankara Bali">
+        <span>Nirankara Bali</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="koleksi.html">Koleksi</a>
+        <a href="belanja.html">Cara Belanja</a>
+        <a href="lokasi.html">Lokasi</a>
+        <a href="kontak.html" class="active">Kontak</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>Kontak & Customer Service</h2>
+        <p class="lead">Hubungi kami untuk konsultasi dan pemesanan. Kami siap membantu.</p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>WhatsApp Admin</h3>
+            <p>
+              <a class="btn" href="https://wa.me/6285173001474" target="_blank" rel="noopener">Chat Sekarang</a>
+            </p>
+            <p class="muted">Respon pada jam operasional.</p>
+          </div>
+          <div class="card">
+            <h3>Sosial Media</h3>
+            <p>
+              <a href="https://www.tiktok.com/@nirankarabali?_t=ZS-8zJ1MVeTuZ2&_r=1" target="_blank" rel="noopener">TikTok</a> ·
+              <a href="https://www.facebook.com/share/16WvEtWr6E/" target="_blank" rel="noopener">Facebook</a> · 
+              <a href="https://www.instagram.com/nirankarabali?igsh=dzZueXI5YnBuc3hu" target="_blank" rel="noopener">Instagram</a>
+            </p>
+            <p class="muted">Ikuti update jadwal live sale dan edukasi perawatan.</p>
+          </div>
+        </div>
+
+        <div class="spacer"></div>
+        <h3>Kirim Pesan Cepat</h3>
+        <form id="contactForm">
+          <div class="form-grid">
+            <div>
+              <label for="name">Nama</label>
+              <input type="text" id="name" name="name" placeholder="Nama Anda" required>
+            </div>
+            <div>
+              <label for="message">Pesan</label>
+              <textarea id="message" name="message" placeholder="Tuliskan pesan Anda" required></textarea>
+            </div>
+          </div>
+          <div class="spacer"></div>
+          <button class="btn" type="submit">Kirim</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>Nirankara Bali © <span id="year"></span>. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
+
