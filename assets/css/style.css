@@ -471,6 +471,9 @@ section.section {
   transform: translateY(8px) scale(0.98);
   opacity: 0.98;
   transition: transform .28s var(--ease-out), opacity .28s var(--ease-out);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal header {
@@ -483,7 +486,7 @@ section.section {
 
 .modal .content {
   display: grid;
-  grid-template-columns: 1fr 0,8fr;
+  grid-template-columns: 1fr 0.8fr;
   gap: 10px;
   padding: 10px;
 }
@@ -565,10 +568,12 @@ textarea { min-height: 120px; resize: vertical; }
 /* Order Form Styles */
 .order-modal {
   width: min(600px, 92%);
+  max-height: 90vh;
 }
 
 .order-content {
   padding: 20px;
+  overflow: auto;
 }
 
 .form-group {
