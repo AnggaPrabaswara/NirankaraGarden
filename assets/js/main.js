@@ -172,7 +172,7 @@ function closeOrderModal() {
 // Handle pickup location change
 if (pickupLocationSelect && addressGroup) {
   pickupLocationSelect.addEventListener('change', (e) => {
-    if (e.target.value === '🚚 Pengiriman ke alamat') {
+    if (e.target.value === 'Pengiriman ke alamat') {
       addressGroup.style.display = 'block';
       document.getElementById('address').required = true;
     } else {
@@ -208,24 +208,15 @@ if (orderForm) {
     const customerName = formData.get('customerName');
     const pickupLocation = formData.get('pickupLocation');
     const address = formData.get('address');
-    const phone = formData.get('phone');
     
-    if (!customerName || !pickupLocation || !phone) {
+    if (!customerName || !pickupLocation) {
       alert('Mohon lengkapi semua field yang wajib diisi.');
       return;
     }
     
-    if (pickupLocation === '🚚 Pengiriman ke alamat' && !address) {
+    if (pickupLocation === 'Pengiriman ke alamat' && !address) {
       alert('Mohon masukkan alamat lengkap untuk pengiriman.');
       return;
-    }
-    
-    // Format phone number (remove non-digits and ensure it starts with 62)
-    let formattedPhone = phone.replace(/\D/g, '');
-    if (formattedPhone.startsWith('0')) {
-      formattedPhone = '62' + formattedPhone.substring(1);
-    } else if (!formattedPhone.startsWith('62')) {
-      formattedPhone = '62' + formattedPhone;
     }
     
     // Create WhatsApp message
@@ -236,10 +227,9 @@ if (orderForm) {
     if (plantPrice) {
       message += ` *Harga:* ${plantPrice}%0A`;
     }
-    message += ` *Nomor WhatsApp:* ${phone}%0A`;
     message += ` *Lokasi Pengambilan:* ${pickupLocation}%0A`;
     
-    if (pickupLocation === '🚚 Pengiriman ke alamat' && address) {
+    if (pickupLocation === 'Pengiriman ke alamat' && address) {
       message += `🏠 *Alamat Lengkap:* ${address}%0A`;
     }
     
