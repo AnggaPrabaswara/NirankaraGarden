@@ -187,49 +187,53 @@
       </header>
       <div class="order-content">
         <form id="orderForm">
-          <div class="form-group">
-            <label for="plantName">Nama Tanaman:</label>
-            <input type="text" id="plantName" name="plantName" readonly>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="plantName">Nama Tanaman:</label>
+              <input type="text" id="plantName" name="plantName" readonly>
+            </div>
+            <div class="form-group">
+              <label for="plantPrice">Harga:</label>
+              <input type="text" id="plantPrice" name="plantPrice" readonly>
+            </div>
+            <div class="form-group">
+              <label for="customerName">Nama Lengkap<span class="req">*</span>:</label>
+              <input type="text" id="customerName" name="customerName" required placeholder="Masukkan nama lengkap Anda">
+            </div>
+            <div class="form-group">
+              <label for="pickupLocation">Lokasi Pengambilan<span class="req">*</span>:</label>
+              <select id="pickupLocation" name="pickupLocation" required>
+                <option value="">Pilih lokasi pengambilan</option>
+                <option value="Nirankara Garden">📍 Nirankara Garden</option>
+                <option value="Ubung">📍 Ubung</option>
+                <option value="Pengosekan">📍 Pengosekan</option>
+                <option value="Pengiriman ke alamat">🚚 Pengiriman ke alamat</option>
+              </select>
+              <p class="field-hint">Pilih "Pengiriman ke alamat" jika ingin dikirim ke rumah.</p>
+              <div class="mobile-pickup-list" id="mobilePickupList" aria-label="Lokasi Pengambilan (Mobile)">
+                <label class="pickup-item">
+                  <input type="radio" name="pickupLocationMobile" value="Nirankara Garden">
+                  <span>📍 Nirankara Garden</span>
+                </label>
+                <label class="pickup-item">
+                  <input type="radio" name="pickupLocationMobile" value="Ubung">
+                  <span>📍 Ubung</span>
+                </label>
+                <label class="pickup-item">
+                  <input type="radio" name="pickupLocationMobile" value="Pengosekan">
+                  <span>📍 Pengosekan</span>
+                </label>
+                <label class="pickup-item">
+                  <input type="radio" name="pickupLocationMobile" value="Pengiriman ke alamat">
+                  <span>🚚 Pengiriman ke alamat</span>
+                </label>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="plantPrice">Harga:</label>
-            <input type="text" id="plantPrice" name="plantPrice" readonly>
-          </div>
-          <div class="form-group">
-            <label for="customerName">Nama Lengkap:</label>
-            <input type="text" id="customerName" name="customerName" required placeholder="Masukkan nama lengkap Anda">
-          </div>
-                     <div class="form-group">
-             <label for="pickupLocation">Lokasi Pengambilan:</label>
-             <select id="pickupLocation" name="pickupLocation" required>
-               <option value="">Pilih lokasi pengambilan</option>
-               <option value="Nirankara Garden">📍 Nirankara Garden</option>
-               <option value="Ubung">📍 Ubung</option>
-               <option value="Pengosekan">📍 Pengosekan</option>
-               <option value="Pengiriman ke alamat">🚚 Pengiriman ke alamat</option>
-             </select>
-             <div class="mobile-pickup-list" id="mobilePickupList" aria-label="Lokasi Pengambilan (Mobile)">
-               <label class="pickup-item">
-                 <input type="radio" name="pickupLocationMobile" value="Nirankara Garden">
-                 <span>📍 Nirankara Garden</span>
-               </label>
-               <label class="pickup-item">
-                 <input type="radio" name="pickupLocationMobile" value="Ubung">
-                 <span>📍 Ubung</span>
-               </label>
-               <label class="pickup-item">
-                 <input type="radio" name="pickupLocationMobile" value="Pengosekan">
-                 <span>📍 Pengosekan</span>
-               </label>
-               <label class="pickup-item">
-                 <input type="radio" name="pickupLocationMobile" value="Pengiriman ke alamat">
-                 <span>🚚 Pengiriman ke alamat</span>
-               </label>
-             </div>
-           </div>
           <div class="form-group" id="addressGroup" style="display: none;">
-            <label for="address">Alamat Lengkap:</label>
+            <label for="address">Alamat Lengkap<span class="req">*</span>:</label>
             <textarea id="address" name="address" placeholder="Masukkan alamat lengkap untuk pengiriman"></textarea>
+            <p class="field-hint">Isi alamat lengkap hanya jika memilih pengiriman.</p>
           </div>
           <div class="form-actions">
             <button type="button" class="btn secondary" id="cancelOrder">Batal</button>
